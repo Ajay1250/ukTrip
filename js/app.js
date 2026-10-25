@@ -166,7 +166,7 @@ const itineraryData = [
     destination: 'Birmingham city centre',
     tag: 'recommended',
     summary: 'A relaxed city-centre day while your sister is working, with canals, public spaces, and the Christmas market if open.',
-    heroImage: 'https://images.unsplash.com/photo-1518407613690-d9fc6b5a1bf2?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1776512973180-1da94dec515b?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — relaxed breakfast and slow start',
       'Late morning — walk through Centenary Square and the library area',
@@ -284,7 +284,7 @@ const itineraryData = [
     destination: 'Calton Hill and New Town',
     tag: 'recommended',
     summary: 'Enjoy a scenic viewpoint, browse the New Town, and keep the afternoon flexible around weather and energy.',
-    heroImage: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1721349475561-c1b2aab63c12?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — Calton Hill if weather and ground conditions are suitable',
       'Late morning — walk through New Town and independent shops',
@@ -307,7 +307,7 @@ const itineraryData = [
     destination: 'Edinburgh or countryside choice',
     tag: 'flexible',
     summary: 'Keep the day relaxed in Edinburgh, or choose a countryside option if weather, daylight, and transport all suit.',
-    heroImage: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1721428360480-0d4121f629c4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — museum, gallery, or another neighbourhood walk',
       'Afternoon — revisit the Christmas market or have a café break',
@@ -330,7 +330,7 @@ const itineraryData = [
     destination: 'Edinburgh to Birmingham',
     tag: 'recommended',
     summary: 'Travel back to Birmingham and settle in for a slower Christmas-eve preparation period.',
-    heroImage: 'https://images.unsplash.com/photo-1518407613690-d9fc6b5a1bf2?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1726915729279-753d37229bfb?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning or midday — travel back to Birmingham',
       'After arrival — check in and rest',
@@ -351,7 +351,7 @@ const itineraryData = [
     destination: 'Birmingham home base',
     tag: 'recommended',
     summary: 'Keep Christmas Eve slow and familial with a relaxed morning, food prep, games, and an at-home dinner.',
-    heroImage: 'https://images.unsplash.com/photo-1512364730924-9f49d804f9e6?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1639743776578-7767518bde12?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — sleep in and breakfast together',
       'Daytime — helping with Christmas meal prep and family arrangements',
@@ -362,7 +362,7 @@ const itineraryData = [
       { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }
     ],
     mapTitle: 'Family home base',
-    directions: 'https://www.google.com/maps/search/Birmingham+family+home',
+    directions: 'https://images.unsplash.com/photo-1763725813929-3c21272907ff?q=80&w=2164&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     notes: 'No long-distance driving or mandatory sightseeing. This day is intentionally family-focused.'
   },
   {
@@ -472,7 +472,7 @@ const itineraryData = [
       { name: 'London', lat: 51.5072, lng: -0.1276, type: 'optional' }
     ],
     mapTitle: 'London or Birmingham plan',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham+England&destination=Westminster+London',
+    directions: 'https://images.unsplash.com/photo-1643789452257-3e4bdb198e29?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     notes: 'If London is chosen, remember to verify holiday engineering works and actual transport timetables before setting off. Keep the day focused rather than trying to cover every attraction.'
   },
   {
@@ -778,7 +778,7 @@ function buildAlternativeCards() {
       options: [
         { key: '2026-12-18', title: 'Black Country Living Museum', description: 'Hands-on social-history experience with a slower pace and plenty of space.', duration: 'Half day', travel: 'Approx. 30–45 mins', weather: 'Good in mixed weather', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Black+Country+Living+Museum+Dudley' },
         { key: '2026-12-18-alt-2', title: 'Cannon Hill Park', description: 'A gentle green space for a relaxed morning and an easy winter stroll.', duration: '1–2 hours', travel: 'Approx. 20–30 mins', weather: 'Best in mild weather', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Cannon+Hill+Park+Birmingham' },
-        { key: '2026-12-18-alt-3', title: 'Thinktank Science Museum', description: 'A comfortable indoor choice if the temperature or weather is poor.', duration: '2–3 hours', travel: 'Approx. 15–25 mins', weather: 'Ideal for poor weather', image: 'https://images.unsplash.com/photo-1532169509583-1a1efb4068e7?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Thinktank+Birmingham' }
+        { key: '2026-12-18-alt-3', title: 'Thinktank Science Museum', description: 'A comfortable indoor choice if the temperature or weather is poor.', duration: '2–3 hours', travel: 'Approx. 15–25 mins', weather: 'Ideal for poor weather', image: 'https://plus.unsplash.com/premium_photo-1682689551593-cb1b5a8c978a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Thinktank+Birmingham' }
       ]
     },
     {
@@ -792,7 +792,7 @@ function buildAlternativeCards() {
     {
       label: 'December 28',
       options: [
-        { key: '2026-12-28', title: 'Relaxed family day', description: 'Stay in Birmingham for a gentle day without adding distance or pressure.', duration: 'Flexible', travel: 'No long drive', weather: 'Excellent for all conditions', image: 'https://images.unsplash.com/photo-1518407613690-d9fc6b5a1bf2?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Birmingham+England' },
+        { key: '2026-12-28', title: 'Relaxed family day', description: 'Stay in Birmingham for a gentle day without adding distance or pressure.', duration: 'Flexible', travel: 'No long drive', weather: 'Excellent for all conditions', image: 'https://images.unsplash.com/photo-1760442849412-fc6f23296f08?q=80&w=3193&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Birmingham+England' },
         { key: '2026-12-28-alt-2', title: 'Stratford-upon-Avon', description: 'Historic streets, cafés, and the river make for a charming alternative day trip.', duration: 'Half day', travel: 'Approx. 1–1.5 hours each way', weather: 'Good in most conditions', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Stratford-upon-Avon+England' }
       ]
     },
@@ -800,7 +800,7 @@ function buildAlternativeCards() {
       label: 'December 29',
       options: [
         { key: '2026-12-29', title: 'London day trip', description: 'A focused London visit with Westminster, South Bank, and Covent Garden.', duration: 'Day trip', travel: 'Train or drive depending on preference', weather: 'Good in most conditions', image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/London+England' },
-        { key: '2026-12-29-alt-2', title: 'Extra Birmingham family time', description: 'Keep the day local for a slower farewell to the family and a lower-effort day.', duration: 'Flexible', travel: 'No long trip', weather: 'Excellent for all weather', image: 'https://images.unsplash.com/photo-1512389142861-9c73d2bc5315?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Birmingham+family+home' }
+        { key: '2026-12-29-alt-2', title: 'Extra Birmingham family time', description: 'Keep the day local for a slower farewell to the family and a lower-effort day.', duration: 'Flexible', travel: 'No long trip', weather: 'Excellent for all weather', image: 'https://plus.unsplash.com/premium_photo-1664367173144-7e854e199524?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Birmingham+family+home' }
       ]
     }
   ];
