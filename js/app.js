@@ -372,7 +372,7 @@ const itineraryData = [
     destination: 'Home base',
     tag: 'recommended',
     summary: 'This day is fixed as a home-based Christmas celebration with relaxed breakfast, gifts, lunch, and downtime.',
-    heroImage: 'https://images.unsplash.com/photo-1512389142861-9c73d2bc5315?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://plus.unsplash.com/premium_photo-1701454736122-14b846cfb3c3?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — breakfast and coffee at home',
       'Late morning — gift-giving and family photographs',
@@ -482,7 +482,7 @@ const itineraryData = [
     destination: 'Birmingham',
     tag: 'recommended',
     summary: 'Keep the final full day unhurried with breakfast, family time, optional short outing, packing, and a farewell dinner.',
-    heroImage: 'https://images.unsplash.com/photo-1512389142861-9c73d2bc5315?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1539920951450-2b2d59cff66d?q=80&w=2003&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — relaxed breakfast and family time',
       'Afternoon — optional short outing or local walk',
