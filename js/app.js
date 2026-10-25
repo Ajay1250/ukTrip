@@ -91,7 +91,7 @@ const overviewItems = [
     description: 'Family home base with local walks, city-centre Christmas atmosphere, and quiet evenings.',
     range: 'Dec 15–31',
     tag: 'Family base',
-    image: 'https://images.unsplash.com/photo-1518407613690-d9fc6b5a1bf2?auto=format&fit=crop&w=900&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Skyline%2C_Birmingham%2C_England%2C_UK.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled',
     section: 'itinerary'
   },
   {
