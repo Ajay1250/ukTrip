@@ -236,7 +236,7 @@ const itineraryData = [
     destination: 'Birmingham to Edinburgh',
     tag: 'recommended',
     summary: 'Travel to Edinburgh, check in, rest, and enjoy the Christmas market if it is convenient after arrival.',
-    heroImage: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://plus.unsplash.com/premium_photo-1673657332512-b87806f4f49e?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning or midday — travel from Birmingham to Edinburgh',
       'Check in and settle into accommodation',
