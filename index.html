@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UK Christmas Family Holiday 2026 travel guide with itinerary, maps, alternatives, travel notes, and Christmas plans for Birmingham, Edinburgh, and beyond."
+    />
+    <title>UK Christmas Family Holiday 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="top-nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Go to top">UK Christmas 2026</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="nav-panel" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#map">Full Journey Map</a></li>
+            <li><a href="#itinerary">Daily Itinerary</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#alternatives">Alternatives</a></li>
+            <li><a href="#christmas-plan">Christmas Plan</a></li>
+            <li><a href="#travel-notes">Travel Notes</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button type="button" class="button button-secondary print-button">Print Itinerary</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">December 14–31, 2026</p>
+            <h1 id="hero-title">Christmas in Britain</h1>
+            <p class="hero-subtitle">
+              A winter escape filled with Scottish charm, English villages, Christmas markets,
+              and precious family moments.
+            </p>
+            <ul class="hero-meta" aria-label="Trip summary">
+              <li><strong>Travellers:</strong> Two adults</li>
+              <li><strong>Arrival:</strong> Heathrow, London</li>
+              <li><strong>Home base:</strong> Birmingham</li>
+              <li><strong>Main excursion:</strong> Edinburgh</li>
+              <li><strong>Christmas:</strong> Family time at home</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#itinerary">Explore Our Itinerary</a>
+              <button type="button" class="button button-secondary" id="jump-to-map">View Journey Map</button>
+            </div>
+            <div class="countdown-card" aria-live="polite">
+              <p class="countdown-label">Countdown to departure</p>
+              <div id="countdown" class="countdown" aria-live="polite">Loading…</div>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Trip highlights">
+            <div class="panel-card">
+              <p class="panel-label">Trip Snapshot</p>
+              <ul>
+                <li><span>Dates</span><strong>Dec 14–31, 2026</strong></li>
+                <li><span>Arrival</span><strong>Heathrow, 7:00 PM</strong></li>
+                <li><span>Base</span><strong>Birmingham</strong></li>
+                <li><span>Key city</span><strong>Edinburgh</strong></li>
+                <li><span>Christmas</span><strong>Family at home</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section overview-section" id="overview">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Trip overview</p>
+            <h2>Our British winter route</h2>
+          </div>
+          <div id="overview-grid" class="overview-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section map-section" id="map">
+        <div class="container">
+          <div class="section-heading row-heading">
+            <div>
+              <p class="eyebrow">Full journey map</p>
+              <h2>Our Journey Across Britain</h2>
+            </div>
+            <div class="legend" aria-label="Map legend">
+              <span><i class="dot airport"></i> Airport</span>
+              <span><i class="dot base"></i> Home base</span>
+              <span><i class="dot main"></i> Main destination</span>
+              <span><i class="dot optional"></i> Optional</span>
+              <span><i class="dot daytrip"></i> Day trip</span>
+            </div>
+          </div>
+          <div class="map-shell">
+            <div id="journey-map" aria-label="Interactive trip map"></div>
+          </div>
+          <p class="map-note">
+            This schematic route highlights the broader journey and connects principal stops. For accurate
+            local navigation and live driving routes, use the Google Maps links supplied on each itinerary day.
+          </p>
+        </div>
+      </section>
+
+      <section class="section itinerary-section" id="itinerary">
+        <div class="container">
+          <div class="section-heading row-heading">
+            <div>
+              <p class="eyebrow">Daily itinerary</p>
+              <h2>December 15–31, 2026</h2>
+            </div>
+            <button type="button" class="button button-secondary" id="toggle-selected-only">
+              Show only selected plans
+            </button>
+          </div>
+          <div id="itinerary-container" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section destinations-section" id="destinations">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Destinations</p>
+            <h2>Where we’ll slow down and enjoy the season</h2>
+          </div>
+          <div class="destination-stack">
+            <article class="destination-feature">
+              <div class="feature-copy">
+                <p class="feature-tag">Recommended</p>
+                <h3>Edinburgh</h3>
+                <p>
+                  Historic lanes, medieval closes, festive markets, and warm cafés create the heart of this
+                  winter escape.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img
+                  src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=80"
+                  alt="Edinburgh skyline and historic streets during winter"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+            <article class="destination-feature reverse">
+              <div class="feature-copy">
+                <p class="feature-tag">Optional</p>
+                <h3>Scottish countryside</h3>
+                <p>
+                  A slower route through lochs, glens, and highland roads suits the weather, daylight, and
+                  the family’s pace.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img
+                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
+                  alt="Scottish Highlands landscape with mountains, water, and moody winter light"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+            <article class="destination-feature">
+              <div class="feature-copy">
+                <p class="feature-tag">Flexible</p>
+                <h3>The Cotswolds</h3>
+                <p>
+                  Stone cottages, winding lanes, village cafés, and gentle drives make for a perfect low-stress
+                  winter day trip from Birmingham.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+                  alt="Cotswolds village with cream stone cottages and green countryside"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alternatives-section" id="alternatives">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Alternatives</p>
+            <h2>Choose the plan that suits the day</h2>
+          </div>
+          <div id="alternatives-container" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section christmas-plan" id="christmas-plan">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Christmas period</p>
+            <h2>Family-first Christmas plan</h2>
+          </div>
+          <div class="christmas-grid">
+            <article class="christmas-card warm-card">
+              <p class="christmas-date">December 24 — Christmas Eve</p>
+              <h3>At home with family</h3>
+              <p>
+                Breakfast, family time, food prep, festive games, and a cosy dinner with no forced
+                sightseeing.
+              </p>
+            </article>
+            <article class="christmas-card special-card">
+              <p class="christmas-date">December 25 — Christmas Day</p>
+              <h3>Christmas Day — Reserved for Family</h3>
+              <p>
+                This day is fixed as a quiet home-based day with breakfast, gifts, family photographs,
+                lunch, and a relaxed evening.
+              </p>
+            </article>
+            <article class="christmas-card warm-card">
+              <p class="christmas-date">December 26 — Boxing Day</p>
+              <h3>Flexible &amp; restful</h3>
+              <p>
+                Keep the day light: family time, a short local walk if practical, and no pressure to travel.
+              </p>
+            </article>
+          </div>
+          <div class="christmas-note">
+            Important: UK public transport, shops, and many attractions have reduced hours or closures over
+            Christmas and Boxing Day. Plan around family time and check local opening calendars before leaving
+            the house.
+          </div>
+        </div>
+      </section>
+
+      <section class="section travel-notes" id="travel-notes">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Travel notes</p>
+            <h2>Practical preparation</h2>
+          </div>
+          <div class="notes-grid">
+            <div class="note-panel">
+              <h3>Before departure</h3>
+              <ul class="checklist" data-checklist="before-departure">
+                <li><label><input type="checkbox" /> Confirm passports and UK entry requirements.</label></li>
+                <li><label><input type="checkbox" /> Check ETA or visa requirements.</label></li>
+                <li><label><input type="checkbox" /> Confirm your flight and Heathrow pickup plan.</label></li>
+                <li><label><input type="checkbox" /> Arrange travel insurance and family accommodation notes.</label></li>
+                <li><label><input type="checkbox" /> Review December rail timetables and opening calendars.</label></li>
+                <li><label><input type="checkbox" /> Download offline maps and pack winter clothing.</label></li>
+              </ul>
+            </div>
+            <div class="note-panel">
+              <h3>Before leaving Scotland</h3>
+              <ul class="checklist" data-checklist="before-scotland-leave">
+                <li><label><input type="checkbox" /> Confirm return transport to Birmingham.</label></li>
+                <li><label><input type="checkbox" /> Check service disruption and snow/road conditions.</label></li>
+                <li><label><input type="checkbox" /> Keep December 23 flexible for the return journey.</label></li>
+                <li><label><input type="checkbox" /> Avoid relying on Christmas engineering works without checking the live timetable.</label></li>
+              </ul>
+            </div>
+            <div class="note-panel">
+              <h3>Before Christmas</h3>
+              <ul class="checklist" data-checklist="before-christmas">
+                <li><label><input type="checkbox" /> Buy groceries and household essentials in advance.</label></li>
+                <li><label><input type="checkbox" /> Confirm the Christmas meal plan with the family.</label></li>
+                <li><label><input type="checkbox" /> Avoid scheduling travel on Christmas Day.</label></li>
+                <li><label><input type="checkbox" /> Check local opening hours for Dec 24–26.</label></li>
+              </ul>
+            </div>
+            <div class="note-panel">
+              <h3>Before the Heathrow departure</h3>
+              <ul class="checklist" data-checklist="before-heathrow">
+                <li><label><input type="checkbox" /> Confirm the airline terminal and recommended airport arrival time.</label></li>
+                <li><label><input type="checkbox" /> Recheck traffic and leave a generous driving buffer.</label></li>
+                <li><label><input type="checkbox" /> Keep passports and travel documents accessible.</label></li>
+                <li><label><input type="checkbox" /> Double-check luggage, chargers, and winter layers.</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section references-section" aria-labelledby="references-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Official information</p>
+            <h2 id="references-title">Useful sources to verify winter opening hours and transport</h2>
+          </div>
+          <div class="source-grid">
+            <a class="source-card" href="https://www.edinburgh.gov.uk/christmas" target="_blank" rel="noreferrer">Edinburgh Christmas events and city information</a>
+            <a class="source-card" href="https://www.nationalrail.co.uk/" target="_blank" rel="noreferrer">National Rail timetables and engineering work updates</a>
+            <a class="source-card" href="https://www.birmingham.gov.uk/" target="_blank" rel="noreferrer">Birmingham city and local holiday information</a>
+            <a class="source-card" href="https://www.gov.uk/check-uk-visa" target="_blank" rel="noreferrer">UK government entry and visa guidance</a>
+            <a class="source-card" href="https://www.gov.uk/foreign-travel-advice" target="_blank" rel="noreferrer">UK travel advice and practical guidance</a>
+            <a class="source-card" href="https://www.heathrow.com/" target="_blank" rel="noreferrer">Heathrow airport information</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <p class="footer-title">UK Christmas Family Holiday 2026</p>
+          <p class="footer-note">
+            A relaxed British winter itinerary designed around family time, festive city charm, and gentle
+            exploration.
+          </p>
+        </div>
+        <div class="footer-attribution">
+          <h3>Image attribution</h3>
+          <p>
+            Photographs are sourced from Unsplash and Wikimedia Commons, with licensing reviewed for web use.
+            Replace or refine images as needed for your preferred editorial style.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <a href="#top" aria-label="Back to top">Back to top</a>
+          <a href="README.md" target="_blank" rel="noreferrer">README</a>
+        </div>
+      </div>
+    </footer>
+
+    <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
