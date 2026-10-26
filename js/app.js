@@ -9,7 +9,7 @@ const destinations = [
     lng: -1.8904,
     href: '#itinerary',
     googleMaps: 'https://www.google.com/maps/search/Birmingham,+England',
-    image: 'https://images.unsplash.com/photo-1518407613690-d9fc6b5a1bf2?auto=format&fit=crop&w=900&q=80'
+    image: 'https://images.unsplash.com/photo-1719669753130-38c2245c014b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'
   },
   {
     id: 'heathrow',
@@ -27,13 +27,13 @@ const destinations = [
     id: 'edinburgh',
     name: 'Edinburgh',
     type: 'main',
-    date: 'Dec 19–23',
+    date: 'Dec 18–23',
     description: 'Christmas markets, historic streets, and winter viewpoints in the capital.',
     lat: 55.9533,
     lng: -3.1883,
     href: '#itinerary',
     googleMaps: 'https://www.google.com/maps/search/Edinburgh,+Scotland',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=80'
+    image: './assets/images/edinburgh-castle-december.jpg'
   },
   {
     id: 'glencoe',
@@ -97,9 +97,9 @@ const overviewItems = [
   {
     title: 'Edinburgh',
     description: 'Historic streets, festive markets, and broad city viewpoints with plenty of café time.',
-    range: 'Dec 19–23',
+    range: 'Dec 18–23',
     tag: 'Recommended',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=80',
+    image: './assets/images/edinburgh-castle-december.jpg',
     section: 'itinerary'
   },
   {
@@ -138,15 +138,41 @@ const overviewItems = [
 
 const itineraryData = [
   {
+    date: '2026-12-14',
+    dayLabel: 'Monday',
+    title: 'Travel day — Ajax to Toronto Pearson',
+    destination: 'Ajax, Ontario to Toronto Pearson (YYZ)',
+    tag: 'recommended',
+    summary: 'Start and finish the holiday in Ajax. Travel to Pearson for the Virgin Atlantic overnight flight to London; choose a direct drive or a GO Transit and UP Express connection.',
+    heroImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80',
+    times: [
+      'Before leaving — check your Virgin Atlantic booking for the exact departure time, flight number, terminal, and recommended airport arrival time',
+      'Option 1 — family drop-off, taxi, or rideshare from Ajax to Toronto Pearson; allow a generous traffic buffer',
+      'Option 2 — GO Transit from Ajax to Union Station, then UP Express to Pearson; verify both operators’ schedules and transfer time for your date',
+      'At the airport — check in and follow the airline’s current instructions',
+      'Evening / overnight — Virgin Atlantic flight from YYZ to London Heathrow (LHR); use your booking to confirm whether your flight is nonstop and its exact schedule'
+    ],
+    mapPoints: [
+      { name: 'Ajax GO Station', lat: 43.8509, lng: -79.0204, type: 'base' },
+      { name: 'Toronto Pearson International Airport (YYZ)', lat: 43.6777, lng: -79.6248, type: 'airport' }
+    ],
+    mapTitle: 'Ajax to Toronto Pearson',
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Ajax,+Ontario&destination=Toronto+Pearson+International+Airport&travelmode=driving',
+    directionsLabel: 'Driving directions: Ajax to YYZ',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Ajax+GO+Station,+Ajax,+ON&destination=Toronto+Pearson+International+Airport&travelmode=transit',
+    secondaryDirectionsLabel: 'Transit directions: GO + UP Express',
+    notes: 'Map pins show the endpoints, not a live route. Driving time depends on traffic; transit depends on the date-specific GO and UP Express schedules. Do not infer a flight departure time from the itinerary.'
+  },
+  {
     date: '2026-12-15',
     dayLabel: 'Tuesday',
     title: 'Arrival in England',
     destination: 'Heathrow to Birmingham',
     tag: 'recommended',
-    summary: 'Arrive at Heathrow, meet family, and drive to Birmingham for a calm first evening at home.',
+    summary: 'Arrive at Heathrow at 7:00 PM local time, meet family, and drive to Birmingham for a calm first evening at home.',
     heroImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80',
     times: [
-      '7:00 PM — Heathrow arrival',
+      '7:00 PM — scheduled Heathrow arrival; confirm the local arrival details in your Virgin Atlantic booking',
       'After immigration and baggage — meet family and transfer to the car',
       'Drive to Birmingham, depending on traffic and airport departures',
       'Evening — light dinner, rest, and settle in at the family home'
@@ -157,7 +183,7 @@ const itineraryData = [
     ],
     mapTitle: 'Heathrow to Birmingham',
     directions: 'https://www.google.com/maps/dir/?api=1&origin=Heathrow+Airport+London&destination=Birmingham+England',
-    notes: 'The drive can vary significantly by traffic and arrival time. Aim for a gentle arrival without sightseeing.'
+    notes: 'The drive can vary significantly by traffic, immigration, and airport departure time. Aim for a gentle arrival without sightseeing.'
   },
   {
     date: '2026-12-16',
@@ -208,48 +234,55 @@ const itineraryData = [
   {
     date: '2026-12-18',
     dayLabel: 'Friday',
-    title: 'Flexible Birmingham day',
-    destination: 'Local attraction choice',
-    tag: 'flexible',
-    summary: 'Choose one local attraction from several good December options, or keep the day beautifully simple with family time.',
-    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
-    times: [
-      'Morning — family time or a relaxed start',
-      'Choose one: Black Country Living Museum, Cannon Hill Park, or Thinktank',
-      'Lunch — local café or picnic',
-      'Afternoon — flexible rest or a short city walk'
-    ],
-    mapPoints: [
-      { name: 'Black Country Living Museum', lat: 52.5294, lng: -2.0671, type: 'optional' },
-      { name: 'Cannon Hill Park', lat: 52.4553, lng: -1.9345, type: 'optional' },
-      { name: 'Thinktank', lat: 52.4791, lng: -1.9081, type: 'optional' },
-      { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }
-    ],
-    mapTitle: 'Local attraction choices',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham+England&destination=Black+Country+Living+Museum+Dudley',
-    notes: 'These are alternatives, not a mandatory sequence. Pick the one that matches opening hours, weather, and energy.'
-  },
-  {
-    date: '2026-12-19',
-    dayLabel: 'Saturday',
-    title: 'Travel to Edinburgh',
+    title: 'Travel to Edinburgh — Scotland stay begins',
     destination: 'Birmingham to Edinburgh',
     tag: 'recommended',
-    summary: 'Travel to Edinburgh, check in, rest, and enjoy the Christmas market if it is convenient after arrival.',
-    heroImage: 'https://plus.unsplash.com/premium_photo-1673657332512-b87806f4f49e?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+    summary: 'Start the longer Scotland visit one day earlier, giving Edinburgh four full days before returning to Birmingham on December 23.',
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
     times: [
-      'Morning or midday — travel from Birmingham to Edinburgh',
-      'Check in and settle into accommodation',
-      'Afternoon — rest time and a slow wander',
-      'Evening — optional Christmas market visit if the timing works'
+      'Morning or midday — travel from Birmingham to Edinburgh; prefer rail if a suitable service is available',
+      'After arrival — check in, unpack, and take a proper rest',
+      'Early evening — optional short walk near the accommodation or festive lights if convenient',
+      'Evening — simple dinner and an early night'
     ],
     mapPoints: [
       { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' },
       { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, type: 'main' }
     ],
     mapTitle: 'Birmingham to Edinburgh',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham+England&destination=Edinburgh+Scotland',
-    notes: 'Default plan favors rail if a suitable service is available. Verify the actual Christmas-period timetable before booking, and treat driving as a flexible alternative if preferred.'
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Edinburgh,+Scotland&travelmode=transit',
+    directionsLabel: 'Check public transport route',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Edinburgh,+Scotland&travelmode=driving',
+    secondaryDirectionsLabel: 'Driving alternative',
+    infoUrl: 'https://www.nationalrail.co.uk/',
+    infoLabel: 'Check National Rail timetables',
+    notes: 'The Scotland stay is planned for December 18–23 (five nights). Verify the actual holiday rail timetable before booking; driving is an alternative, not a confirmed route or schedule.'
+  },
+  {
+    date: '2026-12-19',
+    dayLabel: 'Saturday',
+    title: 'Edinburgh — festive city day',
+    destination: 'Edinburgh city centre',
+    tag: 'recommended',
+    summary: 'Ease into Edinburgh with festive streets, a relaxed city walk, and one engaging attraction if the group feels up to it.',
+    heroImage: './assets/images/edinburgh-castle-december.jpg',
+    times: [
+      'Morning — slow breakfast and a walk around Princes Street Gardens',
+      'Late morning — Edinburgh Christmas market, only if the 2026 event is operating',
+      'Lunch — warm café break and time to rest',
+      'Afternoon — choose one: Camera Obscura, National Museum of Scotland, or a gentle Old Town wander',
+      'Evening — early dinner and a quiet night'
+    ],
+    mapPoints: [
+      { name: 'Princes Street Gardens', lat: 55.9516, lng: -3.1985, type: 'main' },
+      { name: 'Edinburgh Christmas market area', lat: 55.9522, lng: -3.1904, type: 'optional' },
+      { name: 'Camera Obscura', lat: 55.9489, lng: -3.1956, type: 'optional' },
+      { name: 'National Museum of Scotland', lat: 55.9470, lng: -3.1890, type: 'optional' }
+    ],
+    mapTitle: 'Edinburgh festive city day',
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Princes+Street+Gardens,+Edinburgh&destination=Camera+Obscura,+Edinburgh&waypoints=National+Museum+of+Scotland&travelmode=walking',
+    directionsLabel: 'Walking directions around Edinburgh',
+    notes: 'Choose one indoor attraction rather than trying to fit everything in. Check attraction booking requirements and Christmas opening calendars; market dates and hours must be confirmed for 2026.'
   },
   {
     date: '2026-12-20',
@@ -274,7 +307,7 @@ const itineraryData = [
       { name: 'Grassmarket', lat: 55.9479, lng: -3.1932, type: 'main' }
     ],
     mapTitle: 'Old Town route',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Castle+Scotland&destination=Grassmarket+Edinburgh&waypoints=Royal+Mile+Edinburgh|Victoria+Street+Edinburgh',
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Castle+Scotland&destination=Grassmarket+Edinburgh&waypoints=Royal+Mile+Edinburgh%7CVictoria+Street+Edinburgh',
     notes: 'If the castle interior is selected, book timed entry if needed and check the official opening calendar. Otherwise, enjoy the exterior and surrounding streets.'
   },
   {
@@ -283,18 +316,20 @@ const itineraryData = [
     title: 'Viewpoints and New Town',
     destination: 'Calton Hill and New Town',
     tag: 'recommended',
-    summary: 'Enjoy a scenic viewpoint, browse the New Town, and keep the afternoon flexible around weather and energy.',
+    summary: 'Mix a short viewpoint walk with Edinburgh’s New Town and choose one indoor attraction for a fun, weather-proof afternoon.',
     heroImage: 'https://images.unsplash.com/photo-1721349475561-c1b2aab63c12?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
       'Morning — Calton Hill if weather and ground conditions are suitable',
-      'Late morning — walk through New Town and independent shops',
-      'Lunch — café lunch or lighter break',
-      'Afternoon — optional quieter afternoon in the city'
+      'Late morning — browse the New Town and independent shops',
+      'Lunch — café lunch and a proper warm-up break',
+      'Afternoon — choose one: Dynamic Earth, National Museum of Scotland, or an unhurried café and shop visit',
+      'Optional — Arthur’s Seat only if weather, visibility, daylight, and trail conditions are safe'
     ],
     mapPoints: [
       { name: 'Calton Hill', lat: 55.9554, lng: -3.1827, type: 'main' },
       { name: 'New Town', lat: 55.9530, lng: -3.1880, type: 'main' },
-      { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, type: 'main' }
+      { name: 'Dynamic Earth', lat: 55.9501, lng: -3.1744, type: 'optional' },
+      { name: 'National Museum of Scotland', lat: 55.9470, lng: -3.1890, type: 'optional' }
     ],
     mapTitle: 'Calton Hill and New Town',
     directions: 'https://www.google.com/maps/dir/?api=1&origin=Calton+Hill+Edinburgh&destination=Princes+Street+Gardens+Edinburgh',
@@ -303,25 +338,33 @@ const itineraryData = [
   {
     date: '2026-12-22',
     dayLabel: 'Tuesday',
-    title: 'Flexible Scotland day',
-    destination: 'Edinburgh or countryside choice',
+    title: 'Scotland day — choose city, Glasgow, or scenery',
+    destination: 'Edinburgh base with optional day trip',
     tag: 'flexible',
-    summary: 'Keep the day relaxed in Edinburgh, or choose a countryside option if weather, daylight, and transport all suit.',
+    summary: 'Keep Edinburgh as the easy default, or choose a Glasgow city day or a countryside outing if the weather, daylight, and verified transport make it practical.',
     heroImage: 'https://images.unsplash.com/photo-1721428360480-0d4121f629c4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
     times: [
-      'Morning — museum, gallery, or another neighbourhood walk',
-      'Afternoon — revisit the Christmas market or have a café break',
-      'Optional — Loch Lomond day trip if travel and weather make it practical',
-      'Alternative — consider a Highlands extension if preferred'
+      'Recommended — Edinburgh at an easy pace: National Museum, Camera Obscura, cafés, or the market if open',
+      'Option — Glasgow by rail for Kelvingrove, Riverside Museum, and a different city day; check the holiday timetable first',
+      'Option — Loch Lomond only if transport, daylight, and weather conditions suit; avoid a long winter drive in poor conditions',
+      'Evening — return to the same Edinburgh accommodation; no hotel change required'
     ],
     mapPoints: [
       { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, type: 'base' },
+      { name: 'Glasgow', lat: 55.8642, lng: -4.2518, type: 'optional' },
+      { name: 'Kelvingrove Art Gallery and Museum', lat: 55.8686, lng: -4.2905, type: 'optional' },
+      { name: 'Riverside Museum', lat: 55.8652, lng: -4.3063, type: 'optional' },
       { name: 'Loch Lomond', lat: 56.1120, lng: -4.6400, type: 'optional' },
       { name: 'Glencoe', lat: 56.6370, lng: -5.1044, type: 'optional' }
     ],
     mapTitle: 'Scotland day choice',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Scotland&destination=Loch+Lomond+Scotland',
-    notes: 'This is a decision day: choose more Edinburgh time, a countryside day trip, or a Highlands overnight extension depending on the weather and energy levels.'
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh,+Scotland&destination=Glasgow,+Scotland&travelmode=transit',
+    directionsLabel: 'Transit directions: Edinburgh to Glasgow',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh,+Scotland&destination=Loch+Lomond,+Scotland&travelmode=driving',
+    secondaryDirectionsLabel: 'Optional driving route to Loch Lomond',
+    infoUrl: 'https://www.nationalrail.co.uk/',
+    infoLabel: 'Check National Rail timetables',
+    notes: 'Default to more Edinburgh time. Glasgow is the more practical city-day alternative; Loch Lomond is optional and weather/daylight dependent. A Highlands overnight would mean changing accommodation and is not recommended for this short winter stay.'
   },
   {
     date: '2026-12-23',
@@ -341,8 +384,13 @@ const itineraryData = [
       { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }
     ],
     mapTitle: 'Edinburgh to Birmingham',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Scotland&destination=Birmingham+England',
-    notes: 'Verify the actual return transport schedule, as holiday service patterns and engineering works can change quickly in December.'
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh,+Scotland&destination=Birmingham,+England&travelmode=transit',
+    directionsLabel: 'Check public transport route',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh,+Scotland&destination=Birmingham,+England&travelmode=driving',
+    secondaryDirectionsLabel: 'Driving alternative',
+    infoUrl: 'https://www.nationalrail.co.uk/',
+    infoLabel: 'Check National Rail timetables',
+    notes: 'Verify the actual return transport schedule, as holiday service patterns and engineering works can change quickly in December. Keep the day clear for the journey.'
   },
   {
     date: '2026-12-24',
@@ -362,7 +410,7 @@ const itineraryData = [
       { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }
     ],
     mapTitle: 'Family home base',
-    directions: 'https://images.unsplash.com/photo-1763725813929-3c21272907ff?q=80&w=2164&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+    directions: 'https://www.google.com/maps/search/Birmingham+family+home',
     notes: 'No long-distance driving or mandatory sightseeing. This day is intentionally family-focused.'
   },
   {
@@ -472,7 +520,12 @@ const itineraryData = [
       { name: 'London', lat: 51.5072, lng: -0.1276, type: 'optional' }
     ],
     mapTitle: 'London or Birmingham plan',
-    directions: 'https://images.unsplash.com/photo-1643789452257-3e4bdb198e29?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Westminster,+London&travelmode=transit',
+    directionsLabel: 'Transit directions: Birmingham to London',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Westminster,+London&travelmode=driving',
+    secondaryDirectionsLabel: 'Driving alternative',
+    infoUrl: 'https://www.nationalrail.co.uk/',
+    infoLabel: 'Check National Rail timetables',
     notes: 'If London is chosen, remember to verify holiday engineering works and actual transport timetables before setting off. Keep the day focused rather than trying to cover every attraction.'
   },
   {
@@ -507,20 +560,230 @@ const itineraryData = [
       'Morning — breakfast and final packing',
       'Around 9:00 AM — initial planning target for departure from Birmingham',
       'Drive to Heathrow with a generous buffer for traffic',
-      'Check in and depart for a 4:00 PM flight'
+      '4:00 PM — Virgin Atlantic flight departure from Heathrow; confirm terminal, check-in guidance, and arrival time in your booking',
+      'After landing at YYZ — continue to Ajax by family pickup, taxi/rideshare, or GO Transit and UP Express if services and timing suit'
     ],
     mapPoints: [
       { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' },
       { name: 'Heathrow Airport', lat: 51.47, lng: -0.4543, type: 'airport' }
     ],
     mapTitle: 'Birmingham to Heathrow',
-    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham+England&destination=Heathrow+Airport+London',
-    notes: 'The suggested 9:00 AM departure is a planning recommendation, not a guarantee of actual traffic or airport procedures. Confirm the airline’s likely arrival window and terminal before leaving.'
+    directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Heathrow+Airport,+London&travelmode=driving',
+    directionsLabel: 'Driving directions: Birmingham to Heathrow',
+    secondaryDirections: 'https://www.google.com/maps/dir/?api=1&origin=Toronto+Pearson+International+Airport&destination=Ajax,+Ontario&travelmode=transit',
+    secondaryDirectionsLabel: 'After landing: transit route from YYZ to Ajax',
+    notes: 'The suggested 9:00 AM departure is a planning target, not a guaranteed travel time. Confirm Virgin Atlantic’s airport arrival guidance and Heathrow terminal before leaving Birmingham. The UK-to-Canada flight arrival time is not specified here; use your booking before choosing onward travel to Ajax.'
+  }
+];
+
+const alternativeGroups = [
+  {
+    date: '2026-12-22',
+    label: 'December 22 — Scotland day choice',
+    recommendedKey: 'edinburgh',
+    options: [
+      {
+        key: 'edinburgh',
+        title: 'More time in Edinburgh',
+        description: 'Keep the easiest, most relaxed option: choose an indoor attraction, café time, and a final festive stroll.',
+        duration: 'Flexible city day',
+        travel: 'No long-distance travel',
+        weather: 'Best all-weather choice',
+        image: './assets/images/edinburgh-castle-december.jpg',
+        map: 'https://www.google.com/maps/search/Edinburgh,+Scotland',
+        heroImage: './assets/images/edinburgh-castle-december.jpg',
+        heroAlt: 'Edinburgh streets and historic skyline',
+        destination: 'Edinburgh',
+        summary: 'A flexible day based in Edinburgh: choose one museum or family-friendly attraction, leave time for meals and cafés, and revisit the Christmas market only if it is open.',
+        times: [
+          'Morning — relaxed breakfast and a museum, gallery, or indoor attraction',
+          'Lunch — warm café break and time to rest',
+          'Afternoon — explore another neighbourhood or revisit a favourite',
+          'Evening — relaxed dinner near the accommodation'
+        ],
+        mapPoints: [
+          { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, type: 'base' },
+          { name: 'National Museum of Scotland', lat: 55.9470, lng: -3.1890, type: 'optional' },
+          { name: 'Dynamic Earth', lat: 55.9501, lng: -3.1744, type: 'optional' }
+        ],
+        directions: 'https://www.google.com/maps/dir/?api=1&origin=National+Museum+of+Scotland&destination=Dynamic+Earth&travelmode=walking',
+        directionsLabel: 'Walking directions around Edinburgh',
+        notes: 'Check attraction opening calendars and booking requirements. The Christmas market and seasonal events need confirmation for 2026.'
+      },
+      {
+        key: 'glasgow',
+        title: 'Glasgow city day by rail',
+        description: 'A lively alternative with indoor museums and a different city atmosphere, returning to the same Edinburgh base.',
+        duration: 'Full but flexible day',
+        travel: 'Rail from Edinburgh; verify holiday service',
+        weather: 'Good in mixed weather',
+        image: './assets/images/glasgow-kelvingrove-gallery.jpg',
+        map: 'https://www.google.com/maps/search/Kelvingrove+Art+Gallery+and+Museum,+Glasgow',
+        heroImage: './assets/images/glasgow-kelvingrove-gallery.jpg',
+        heroAlt: 'Kelvingrove Art Gallery and Museum in Glasgow',
+        infoUrl: 'https://www.scotrail.co.uk/',
+        infoLabel: 'Check ScotRail services',
+        destination: 'Glasgow day trip',
+        summary: 'Take a rail day trip to Glasgow for one or two indoor highlights, such as Kelvingrove and the Riverside Museum, then return to Edinburgh. Keep the order flexible and verify the holiday timetable.',
+        times: [
+          'Morning — check the actual rail service and travel to Glasgow',
+          'Late morning — choose Kelvingrove Art Gallery and Museum or another indoor visit',
+          'Lunch — café break in the West End',
+          'Afternoon — optional Riverside Museum if opening hours and energy allow',
+          'Evening — return to Edinburgh on a verified service'
+        ],
+        mapPoints: [
+          { name: 'Edinburgh Waverley', lat: 55.9520, lng: -3.1890, type: 'base' },
+          { name: 'Glasgow Central', lat: 55.8581, lng: -4.2582, type: 'optional' },
+          { name: 'Kelvingrove Art Gallery and Museum', lat: 55.8689, lng: -4.2910, type: 'optional' },
+          { name: 'Riverside Museum', lat: 55.8652, lng: -4.3063, type: 'optional' }
+        ],
+        directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Waverley+Station&destination=Kelvingrove+Art+Gallery+and+Museum&travelmode=transit',
+        directionsLabel: 'Transit directions: Edinburgh to Glasgow',
+        notes: 'This is an unbooked alternative, not a confirmed train service. Check National Rail/ScotRail holiday schedules and museum opening hours before choosing it.'
+      },
+      {
+        key: 'loch-lomond',
+        title: 'Loch Lomond scenery',
+        description: 'Choose a countryside outing only if winter daylight, road conditions, and transport are favourable.',
+        duration: 'Full day',
+        travel: 'Longer journey; verify route and conditions',
+        weather: 'Weather- and daylight-dependent',
+        image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80',
+        map: 'https://www.google.com/maps/search/Loch+Lomond,+Scotland',
+        heroImage: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+        heroAlt: 'Loch and mountain scenery in Scotland',
+        destination: 'Loch Lomond day trip',
+        summary: 'A scenic alternative if the forecast and daylight are suitable. Keep the route simple, confirm transport in advance, and return to the Edinburgh accommodation.',
+        times: [
+          'Morning — check the forecast, road conditions, and daylight before deciding',
+          'Late morning — travel towards Loch Lomond using a verified route',
+          'Midday — short scenic stop and lunch',
+          'Afternoon — begin the return journey with daylight and rest breaks in mind'
+        ],
+        mapPoints: [
+          { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, type: 'base' },
+          { name: 'Balloch, Loch Lomond', lat: 55.9960, lng: -4.5830, type: 'optional' }
+        ],
+        directions: 'https://www.google.com/maps/dir/?api=1&origin=Edinburgh,+Scotland&destination=Balloch,+Scotland&travelmode=driving',
+        directionsLabel: 'Driving directions: Edinburgh to Balloch',
+        notes: 'Only choose this option when weather and daylight are good and a suitable transport plan is confirmed. Glencoe/Highlands are not added as a same-day drive.'
+      }
+    ]
+  },
+  {
+    date: '2026-12-28',
+    label: 'December 28 — family day or Stratford',
+    recommendedKey: 'family',
+    options: [
+      {
+        key: 'family',
+        title: 'Relaxed Birmingham family day',
+        description: 'Stay close to home, enjoy time together, and keep the day open for rest.',
+        duration: 'Flexible',
+        travel: 'No long-distance trip',
+        weather: 'All-weather choice',
+        image: 'https://images.unsplash.com/photo-1719669753130-38c2245c014b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+        map: 'https://www.google.com/maps/search/Birmingham,+England',
+        heroImage: 'https://images.unsplash.com/photo-1719669753130-38c2245c014b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+        heroAlt: 'Birmingham city scene',
+        destination: 'Birmingham',
+        summary: 'Keep this as a calm family day in Birmingham with an optional local walk and an unhurried meal.',
+        times: ['Morning — breakfast together', 'Afternoon — family time or a nearby walk', 'Evening — relaxed meal at home or nearby'],
+        mapPoints: [{ name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }],
+        directions: 'https://www.google.com/maps/search/Birmingham,+England',
+        directionsLabel: 'Open Birmingham map',
+        notes: 'A family day is the recommended choice if everyone wants a rest after Christmas.'
+      },
+      {
+        key: 'stratford',
+        title: 'Stratford-upon-Avon',
+        description: 'A historic-town alternative with river views, cafés, and Shakespeare-related sights where open.',
+        duration: 'Half day or relaxed day',
+        travel: 'Driving route from Birmingham; check current conditions',
+        weather: 'Good in most conditions',
+        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+        map: 'https://www.google.com/maps/search/Stratford-upon-Avon,+England',
+        heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+        heroAlt: 'Historic English town street',
+        destination: 'Stratford-upon-Avon',
+        summary: 'Visit the historic centre, enjoy a river walk if conditions allow, and choose one Shakespeare-related sight only if it is open.',
+        times: ['Morning — drive from Birmingham after checking conditions', 'Late morning — historic centre and a café stop', 'Afternoon — optional riverside walk or one open attraction', 'Return to Birmingham before the evening'],
+        mapPoints: [
+          { name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' },
+          { name: 'Stratford-upon-Avon', lat: 52.1913, lng: -1.7086, type: 'optional' }
+        ],
+        directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham,+England&destination=Stratford-upon-Avon,+England&travelmode=driving',
+        directionsLabel: 'Driving directions to Stratford-upon-Avon',
+        notes: 'Check attraction calendars, parking, and winter conditions. Do not treat every Shakespeare site as open.'
+      }
+    ]
+  },
+  {
+    date: '2026-12-29',
+    label: 'December 29 — London or Birmingham',
+    recommendedKey: 'birmingham',
+    options: [
+      {
+        key: 'birmingham',
+        title: 'Extra Birmingham family time',
+        description: 'Keep the day local for a slower farewell, nearby walk, and relaxed meal.',
+        duration: 'Flexible',
+        travel: 'No long-distance trip',
+        weather: 'All-weather choice',
+        image: 'https://images.unsplash.com/photo-1719669753130-38c2245c014b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+        map: 'https://www.google.com/maps/search/Birmingham,+England',
+        heroImage: 'https://images.unsplash.com/photo-1719669753130-38c2245c014b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+        heroAlt: 'Birmingham city scene',
+        destination: 'Birmingham',
+        summary: 'Stay in Birmingham for more family time, a local walk, optional shopping if open, and a relaxed meal.',
+        times: ['Morning — relaxed breakfast with family', 'Afternoon — local walk or one nearby activity', 'Evening — enjoy a relaxed meal and prepare for the final days'],
+        mapPoints: [{ name: 'Birmingham', lat: 52.4862, lng: -1.8904, type: 'base' }],
+        directions: 'https://www.google.com/maps/search/Birmingham,+England',
+        directionsLabel: 'Open Birmingham map',
+        notes: 'Recommended for a lower-effort day. Check local holiday opening hours before planning shopping.'
+      },
+      {
+        key: 'london',
+        title: 'London day trip',
+        description: 'Choose a small cluster of sights: Westminster, a South Bank walk, and Covent Garden if time permits.',
+        duration: 'Full day',
+        travel: 'Rail preferred if service suits; verify holiday timetable',
+        weather: 'Good in most conditions',
+        image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=900&q=80',
+        map: 'https://www.google.com/maps/search/Westminster,+London',
+        heroImage: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80',
+        heroAlt: 'London street and historic architecture',
+        destination: 'London',
+        summary: 'Make London a focused day trip: Westminster and Big Ben, a short South Bank walk, then Covent Garden only if time, energy, and opening hours allow.',
+        times: ['Morning — verify rail service and travel from Birmingham', 'Late morning — Westminster and Big Ben exterior', 'Lunch — South Bank café break', 'Afternoon — choose South Bank or Covent Garden, not a long attraction checklist', 'Evening — return to Birmingham on a verified service'],
+        mapPoints: [
+          { name: 'Birmingham New Street', lat: 52.4778, lng: -1.8997, type: 'base' },
+          { name: 'Westminster / Big Ben', lat: 51.5007, lng: -0.1246, type: 'optional' },
+          { name: 'South Bank', lat: 51.5055, lng: -0.1165, type: 'optional' },
+          { name: 'Covent Garden', lat: 51.5117, lng: -0.1240, type: 'optional' }
+        ],
+        directions: 'https://www.google.com/maps/dir/?api=1&origin=Birmingham+New+Street&destination=Westminster,+London&travelmode=transit',
+        directionsLabel: 'Transit directions: Birmingham to Westminster',
+        notes: 'Verify holiday rail timetables and engineering work. Winter Wonderland, if considered, needs official date, hours, and entry details checked.'
+      }
+    ]
   }
 ];
 
 const selectedKey = 'uk-christmas-alt-selections';
 const visibilityKey = 'uk-christmas-show-selected';
+
+document.addEventListener('error', (event) => {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement) || image.classList.contains('leaflet-tile') || image.dataset.fallbackApplied) return;
+
+  image.dataset.fallbackApplied = 'true';
+  image.alt = `Photograph temporarily unavailable: ${image.alt}`;
+  image.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#e8dfd1"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#355f4d" font-family="sans-serif" font-size="28">Photograph temporarily unavailable</text></svg>'
+  )}`;
+}, true);
 
 function safeStorageGet(key, fallback = null) {
   try {
@@ -655,13 +918,14 @@ function renderItinerary() {
 
   let visibleDays = itineraryData;
   if (showOnlySelected) {
-    visibleDays = itineraryData.filter((day) => selected[day.date] === 'selected');
+    visibleDays = itineraryData.filter((day) => Boolean(selected[day.date]));
   }
 
   container.innerHTML = `
     <div class="itinerary-list">
-      ${visibleDays.map((day) => {
-        const selectedStatus = selected[day.date] === 'selected' ? 'selected' : '';
+      ${visibleDays.map((sourceDay) => {
+        const day = getDayPlan(sourceDay, selected);
+        const selectedStatus = Boolean(selected[sourceDay.date]);
         return `
           <article class="itinerary-card ${selectedStatus ? 'selected-plan' : ''}" data-day="${day.date}">
             <div class="itinerary-header">
@@ -669,7 +933,10 @@ function renderItinerary() {
                 <strong>${day.date.split('-')[2]} Dec</strong>
                 <span>${day.dayLabel}</span>
               </div>
-              <span class="itinerary-tag ${day.tag}">${day.tag === 'recommended' ? 'Recommended' : day.tag === 'flexible' ? 'Flexible' : 'Optional'}</span>
+              <div class="itinerary-badges">
+                <span class="itinerary-tag ${day.tag}">${day.tag === 'recommended' ? 'Recommended' : day.tag === 'flexible' ? 'Flexible' : 'Optional'}</span>
+                ${day.alternativeTitle ? `<span class="preferred-plan-label">Preferred plan: ${day.alternativeTitle}</span>` : ''}
+              </div>
             </div>
             <div class="itinerary-content">
               <div class="itinerary-main">
@@ -680,13 +947,15 @@ function renderItinerary() {
                 </ul>
                 <div class="day-summary">${day.notes}</div>
                 <div class="itinerary-actions">
-                  <a class="button button-primary" href="${day.directions}" target="_blank" rel="noreferrer">Open Driving Directions</a>
+                  <a class="button button-primary" href="${day.directions}" target="_blank" rel="noreferrer">${day.directionsLabel || 'Open map directions'}</a>
+                  ${day.secondaryDirections ? `<a class="button button-secondary" href="${day.secondaryDirections}" target="_blank" rel="noreferrer">${day.secondaryDirectionsLabel || 'Alternative route'}</a>` : ''}
+                  ${day.infoUrl ? `<a class="button button-secondary" href="${day.infoUrl}" target="_blank" rel="noreferrer">${day.infoLabel || 'Official travel information'}</a>` : ''}
                   <a class="button button-secondary" href="#alternatives">View alternatives</a>
                 </div>
               </div>
               <div class="itinerary-side">
                 <div class="itinerary-image">
-                  <img src="${day.heroImage}" alt="${day.title} at ${day.destination}" loading="lazy" />
+                  <img src="${day.heroImage}" alt="${day.heroAlt || `${day.title} at ${day.destination}`}" loading="lazy" />
                 </div>
                 <div class="itinerary-meta">
                   <ul>
@@ -697,6 +966,7 @@ function renderItinerary() {
               </div>
             </div>
             <div class="daily-map" data-map="${day.date}"></div>
+            <p class="map-note daily-map-note">Map pins show approximate locations; any line between pins is schematic, not a verified road or live route. Use the directions links for navigation.</p>
           </article>
         `;
       }).join('')}
@@ -706,16 +976,45 @@ function renderItinerary() {
   renderDailyMaps();
 }
 
+function getDayPlan(day, selections) {
+  const group = alternativeGroups.find((item) => item.date === day.date);
+  if (!group) return day;
+
+  const selectedKey = selections[day.date] || group.recommendedKey;
+  const option = group.options.find((item) => item.key === selectedKey);
+  if (!option) return day;
+
+  return {
+    ...day,
+    title: option.itineraryTitle || day.title,
+    destination: option.destination,
+    summary: option.summary,
+    times: option.times,
+    heroImage: option.heroImage || day.heroImage,
+    heroAlt: option.heroAlt || `${option.title} photograph`,
+    mapPoints: option.mapPoints,
+    directions: option.directions,
+    directionsLabel: option.directionsLabel,
+    secondaryDirections: option.secondaryDirections,
+    secondaryDirectionsLabel: option.secondaryDirectionsLabel,
+    infoUrl: option.infoUrl,
+    infoLabel: option.infoLabel,
+    notes: option.notes,
+    alternativeTitle: option.title
+  };
+}
+
 function renderDailyMaps() {
   if (typeof L === 'undefined') return;
 
   document.querySelectorAll('[data-map]').forEach((el) => {
     const date = el.dataset.map;
-    const day = itineraryData.find((item) => item.date === date);
-    if (!day) return;
+    const sourceDay = itineraryData.find((item) => item.date === date);
+    if (!sourceDay) return;
 
     el.innerHTML = '';
     const selected = safeStorageGet(selectedKey, {});
+    const day = getDayPlan(sourceDay, selected);
     const relevantPoints = day.mapPoints;
 
     const map = L.map(el, { zoomControl: true, scrollWheelZoom: false });
@@ -746,21 +1045,10 @@ function renderDailyMaps() {
       route.addTo(map);
     }
 
-    const selectedOption = selected[day.date];
-    if (selectedOption === 'selected') {
+    if (selected[day.date]) {
       const note = document.createElement('div');
       note.className = 'selected-banner';
-      note.textContent = 'Preferred plan selected';
-      note.style.position = 'absolute';
-      note.style.top = '8px';
-      note.style.right = '8px';
-      note.style.zIndex = '500';
-      note.style.background = 'rgba(18,49,38,0.85)';
-      note.style.color = '#fff';
-      note.style.padding = '6px 10px';
-      note.style.borderRadius = '999px';
-      note.style.fontSize = '12px';
-      note.style.fontWeight = '700';
+      note.textContent = `Preferred: ${day.alternativeTitle}`;
       el.style.position = 'relative';
       el.appendChild(note);
     }
@@ -772,60 +1060,36 @@ function buildAlternativeCards() {
   if (!container) return;
 
   const selections = safeStorageGet(selectedKey, {});
-  const groups = [
-    {
-      label: 'December 18',
-      options: [
-        { key: '2026-12-18', title: 'Black Country Living Museum', description: 'Hands-on social-history experience with a slower pace and plenty of space.', duration: 'Half day', travel: 'Approx. 30–45 mins', weather: 'Good in mixed weather', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Black+Country+Living+Museum+Dudley' },
-        { key: '2026-12-18-alt-2', title: 'Cannon Hill Park', description: 'A gentle green space for a relaxed morning and an easy winter stroll.', duration: '1–2 hours', travel: 'Approx. 20–30 mins', weather: 'Best in mild weather', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Cannon+Hill+Park+Birmingham' },
-        { key: '2026-12-18-alt-3', title: 'Thinktank Science Museum', description: 'A comfortable indoor choice if the temperature or weather is poor.', duration: '2–3 hours', travel: 'Approx. 15–25 mins', weather: 'Ideal for poor weather', image: 'https://plus.unsplash.com/premium_photo-1682689551593-cb1b5a8c978a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Thinktank+Birmingham' }
-      ]
-    },
-    {
-      label: 'December 22',
-      options: [
-        { key: '2026-12-22', title: 'Edinburgh city day', description: 'Stay in the city for a slower day of museums, cafés, shopping, and Christmas atmosphere.', duration: 'Flexible', travel: 'No travel required', weather: 'Good for all weather', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Edinburgh+Scotland' },
-        { key: '2026-12-22-alt-2', title: 'Loch Lomond excursion', description: 'A day trip to Scottish countryside if the weather and daylight are suitable.', duration: 'Full day', travel: 'Approx. 1.5–2.5 hours each way', weather: 'Weather-dependent', image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Loch+Lomond+Scotland' },
-        { key: '2026-12-22-alt-3', title: 'Highlands overnight extension', description: 'The most scenic option, best reserved for the best weather and stable road conditions.', duration: 'Overnight', travel: 'Longer drive', weather: 'Weather-dependent', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Glencoe+Scotland' }
-      ]
-    },
-    {
-      label: 'December 28',
-      options: [
-        { key: '2026-12-28', title: 'Relaxed family day', description: 'Stay in Birmingham for a gentle day without adding distance or pressure.', duration: 'Flexible', travel: 'No long drive', weather: 'Excellent for all conditions', image: 'https://images.unsplash.com/photo-1760442849412-fc6f23296f08?q=80&w=3193&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Birmingham+England' },
-        { key: '2026-12-28-alt-2', title: 'Stratford-upon-Avon', description: 'Historic streets, cafés, and the river make for a charming alternative day trip.', duration: 'Half day', travel: 'Approx. 1–1.5 hours each way', weather: 'Good in most conditions', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/Stratford-upon-Avon+England' }
-      ]
-    },
-    {
-      label: 'December 29',
-      options: [
-        { key: '2026-12-29', title: 'London day trip', description: 'A focused London visit with Westminster, South Bank, and Covent Garden.', duration: 'Day trip', travel: 'Train or drive depending on preference', weather: 'Good in most conditions', image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=900&q=80', map: 'https://www.google.com/maps/search/London+England' },
-        { key: '2026-12-29-alt-2', title: 'Extra Birmingham family time', description: 'Keep the day local for a slower farewell to the family and a lower-effort day.', duration: 'Flexible', travel: 'No long trip', weather: 'Excellent for all weather', image: 'https://plus.unsplash.com/premium_photo-1664367173144-7e854e199524?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', map: 'https://www.google.com/maps/search/Birmingham+family+home' }
-      ]
-    }
-  ];
-
-  container.innerHTML = groups.map((group) => `
+  container.innerHTML = alternativeGroups.map((group) => {
+    const activeKey = selections[group.date] || group.recommendedKey;
+    return `
     <div class="alternative-group" style="margin-bottom: 2rem;">
-      <h3 style="margin-bottom: 1rem;">${group.label}</h3>
+      <div class="alternative-heading">
+        <h3>${group.label}</h3>
+        <button type="button" class="button button-secondary reset-option" data-reset-date="${group.date}">Reset to recommended plan</button>
+      </div>
       <div class="alternatives-grid">
         ${group.options.map((option) => {
-          const active = selections[option.key] === 'selected';
+          const active = activeKey === option.key;
+          const recommended = group.recommendedKey === option.key;
           return `
             <article class="alternative-card ${active ? 'selected' : ''}">
               <img src="${option.image}" alt="${option.title}" loading="lazy" />
               <div class="alternative-body">
+                ${recommended ? '<span class="tag">Recommended</span>' : ''}
                 <h3>${option.title}</h3>
                 <p>${option.description}</p>
                 <ul class="alternative-list">
-                  <li><strong>Why:</strong> Best for a slower, flexible day.</li>
+                  <li><strong>Why choose it:</strong> A distinct alternative that suits the day’s energy and conditions.</li>
                   <li><strong>Suggested duration:</strong> ${option.duration}</li>
                   <li><strong>Travel:</strong> ${option.travel}</li>
                   <li><strong>Weather:</strong> ${option.weather}</li>
                 </ul>
                 <div class="alternative-actions">
-                  <button type="button" class="button button-primary choose-option" data-option-key="${option.key}">${active ? 'Selected' : 'Choose this option'}</button>
+                  <button type="button" class="button button-primary choose-option" data-option-key="${option.key}" data-option-date="${group.date}">${active ? 'Preferred plan' : 'Choose this option'}</button>
                   <a class="button button-secondary" href="${option.map}" target="_blank" rel="noreferrer">Map</a>
+                  <a class="button button-secondary" href="${option.directions}" target="_blank" rel="noreferrer">${option.directionsLabel || 'Directions'}</a>
+                  ${option.infoUrl ? `<a class="button button-secondary" href="${option.infoUrl}" target="_blank" rel="noreferrer">${option.infoLabel || 'Official information'}</a>` : ''}
                 </div>
               </div>
             </article>
@@ -833,16 +1097,25 @@ function buildAlternativeCards() {
         }).join('')}
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   container.querySelectorAll('.choose-option').forEach((button) => {
     button.addEventListener('click', () => {
+      const optionDate = button.dataset.optionDate;
       const optionKey = button.dataset.optionKey;
       const selections = safeStorageGet(selectedKey, {});
-      Object.keys(selections).forEach((key) => {
-        if (selections[key] === 'selected') delete selections[key];
-      });
-      selections[optionKey] = 'selected';
+      selections[optionDate] = optionKey;
+      safeStorageSet(selectedKey, selections);
+      buildAlternativeCards();
+      renderItinerary();
+    });
+  });
+
+  container.querySelectorAll('.reset-option').forEach((button) => {
+    button.addEventListener('click', () => {
+      const selections = safeStorageGet(selectedKey, {});
+      delete selections[button.dataset.resetDate];
       safeStorageSet(selectedKey, selections);
       buildAlternativeCards();
       renderItinerary();
@@ -857,6 +1130,8 @@ function toggleSelectedOnly() {
   const showOnlySelected = safeStorageGet(visibilityKey, false);
   button.textContent = showOnlySelected ? 'Show all plans' : 'Show only selected plans';
 
+  if (button.dataset.bound === 'true') return;
+  button.dataset.bound = 'true';
   button.addEventListener('click', () => {
     const next = !safeStorageGet(visibilityKey, false);
     safeStorageSet(visibilityKey, next);
@@ -913,11 +1188,11 @@ function checkCountdown() {
   const countdown = document.getElementById('countdown');
   if (!countdown) return;
 
-  const departureDate = new Date('2026-12-31T16:00:00');
+  const departureDate = new Date(2026, 11, 14);
   const now = new Date();
 
   if (now >= departureDate) {
-    countdown.textContent = 'Trip departure complete';
+    countdown.textContent = 'Travel day from Ajax';
     return;
   }
 
@@ -925,7 +1200,7 @@ function checkCountdown() {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  countdown.textContent = `${days}d ${hours}h ${minutes}m to departure`;
+  countdown.textContent = `${days}d ${hours}h ${minutes}m until we leave Ajax`;
 }
 
 function init() {

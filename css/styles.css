@@ -206,6 +206,11 @@ p {
   border-radius: 999px;
 }
 
+.nav-toggle .sr-only {
+  width: 1px;
+  height: 1px;
+}
+
 .button {
   border: none;
   display: inline-flex;
@@ -237,7 +242,7 @@ p {
 .hero {
   position: relative;
   background: linear-gradient(rgba(16, 34, 27, 0.62), rgba(16, 34, 27, 0.5)),
-    url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    url('../assets/images/edinburgh-castle-december.jpg') center/cover no-repeat;
   min-height: 680px;
   display: flex;
   align-items: center;
@@ -938,6 +943,37 @@ p {
   box-shadow: 0 16px 36px rgba(18,49,38,0.12);
 }
 
+.itinerary-badges {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.preferred-plan-label {
+  color: var(--forest-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.alternative-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alternative-heading h3 {
+  margin: 0;
+}
+
+.daily-map-note {
+  padding: 0 1rem 1rem;
+  font-size: 0.82rem;
+}
+
 .selected-banner {
   position: absolute;
   top: 8px;
@@ -1027,9 +1063,14 @@ p {
   .itinerary-header,
   .row-heading,
   .card-actions,
+  .alternative-heading,
   .footer-bottom .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .itinerary-badges {
+    justify-content: flex-start;
   }
 
   .legend {
